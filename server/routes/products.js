@@ -5,7 +5,7 @@ const {
     Items
 } = require('../models')
 
-router.get('/products', async (req, res) => { // Fetch all
+async function constructArray() {
     const items = (await Items.findAll())
     let ret = {
         "items": [],
@@ -20,25 +20,16 @@ router.get('/products', async (req, res) => { // Fetch all
         ret.sauces.push(sauce.dataValues);
     }
 
+    return ret
+}
+
+router.get('/products', async (req, res) => { // Fetch all
+    const ret = await constructArray();
     res.status(200).json(ret)
 })
 
 router.get('/products/:id', async (req, res) => {
-    const id = Number(req.params.id);
-    const items = (await Items.findAll())
-    let ret = {
-        "items": [],
-        "sauces": []
-    };
-    for (let item of items) {
-        ret.items.push(item.dataValues);
-    }
-
-    const sauces = (await Sauce.findAll())
-    for (let sauce of sauces) {
-        ret.sauces.push(sauce.dataValues);
-    }
-
+    const ret = await constructArray();
     let selectedItem = ret.items.find(e => e.id === id);
 
     if (!selectedItem) {
