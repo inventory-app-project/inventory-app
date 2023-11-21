@@ -28,4 +28,14 @@ router.get("/items/:id", async (req, res) => {
   }
 });
 
+// POST a new item
+router.post("/items", async (req, res) => {
+  try {
+    const newItem = await Item.create(req.body);
+    res.status(201).json(newItem);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
 module.exports = router;
