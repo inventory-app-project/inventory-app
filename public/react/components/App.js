@@ -13,7 +13,6 @@ export const App = () => {
     try {
       const response = await fetch(`${apiURL}/sauces`);
       const saucesData = await response.json();
-
       setSauces(saucesData);
     } catch (err) {
       console.log("Oh no an error! ", err);
@@ -32,7 +31,7 @@ export const App = () => {
   }
 
   useEffect(() => {
-    fetchSauces();
+    //fetchSauces();
     fetchItems();
   }, []);
 
