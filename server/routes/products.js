@@ -23,7 +23,7 @@ router.get('/', async (req, res) => { // Fetch all
     res.status(200).json(ret)
 })
 
-router.get('/:id', async (req, res) => {
+router.get('/product/:id', async (req, res) => {
     const id = Number(req.params.id);
     const items = (await Items.findAll())
     let ret = {
@@ -50,5 +50,15 @@ router.get('/:id', async (req, res) => {
         res.status(200).json(selectedItem);
     }
 })
+
+router.get("/items", async (req, res, next) => {
+    const items = await Items.findAll();
+    res.status(200).send(items);
+});
+
+router.get("/sauces", async (req, res, next) => {
+    const sauces = await Sauce.findAll();
+    res.status(200).send(sauces);
+});
 
 module.exports = router
