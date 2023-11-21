@@ -1,55 +1,69 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  color: #0F1111 !important;
+  color: #0f1111;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol !important
 }
 
 body {
   padding: 15px;
+  background-color: rgb(255, 255, 255);
 }
 
-.item-section, .sauce-section {
-  display: grid;
-  justify-content: center;
+.item-section,
+.sauce-section {
   text-align: center;
+  justify-content: center;
   margin-bottom: 15px;
 }
 
 div.container {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
   margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-div.container > div {
-  border: solid 1px #D5DBDB;
-  padding: 5px;
+div.container>div {
+  border: 1px solid #d5dbdb;
   border-radius: 3px;
   max-width: 7rem;
+  padding: 5px;
   display: grid;
-  align-items: center;
-  justify-content: center;
-  gap: 3px;
 }
 
-div.container > div > img {
-  max-width: 100%;
-  border-radius: 3px;
+div.container>div>img {
   z-index: 0;
   cursor: pointer;
+  border-radius: 3px;
+  max-width: 100%
 }
 
-div.container > div > label {
+div.container>div>label {
   text-align: center;
   font-size: 10px;
   font-weight: 450;
 }
 
-div.container > div > h3 {
+div.container>div>h3 {
   text-align: center;
-  font-size: 10px;
+  font-size: 10px
+}
+
+div.container>div>button {
+  border: 1px solid rgb(82, 82, 82);
+  border-radius: 3px;
+  color: black;
+  font-weight: 500;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+div.container>div>button:hover{
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 3px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(82, 82, 82);
 }
