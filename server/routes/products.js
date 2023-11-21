@@ -5,7 +5,7 @@ const {
     Items
 } = require('../models')
 
-router.get('/', async (req, res) => { // Fetch all
+router.get('/products', async (req, res) => { // Fetch all
     const items = (await Items.findAll())
     let ret = {
         "items": [],
@@ -23,7 +23,7 @@ router.get('/', async (req, res) => { // Fetch all
     res.status(200).json(ret)
 })
 
-router.get('/product/:id', async (req, res) => {
+router.get('/products/:id', async (req, res) => {
     const id = Number(req.params.id);
     const items = (await Items.findAll())
     let ret = {
