@@ -3,8 +3,10 @@ import React from 'react';
 export const Sauce = (props) => {
 
   return <>
-    <h3>{props.sauce.name}</h3>
-    <img src={props.sauce.image} alt={props.sauce.name} />
+    <div className='container'>
+        <h3>{props.item.name}</h3>
+        <img src={props.item.image} alt={props.item.name} />
+    </div>
   </>
 } 
 	
