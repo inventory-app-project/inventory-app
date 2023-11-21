@@ -6,7 +6,7 @@ const { Sauce } = require("../models");
 router.get("/sauces", async (req, res, next) => {
   try {
     const sauces = await Sauce.findAll();
-    res.status.send(sauces);
+    res.status(200).send(sauces);
   } catch (error) {
     next(error);
   }
