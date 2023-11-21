@@ -31,9 +31,18 @@ export const App = () => {
   }
 
   useEffect(() => {
-    //fetchSauces();
+    fetchSauces();
     fetchItems();
   }, []);
+
+  function App() {
+    return (
+      <div>
+        {/* any other components we add in future */}
+        <AddItemForm />
+      </div>
+    );
+  }
 
   return (
     <main>
@@ -41,15 +50,15 @@ export const App = () => {
       <h1>Sauce Store</h1>
       <h2>All things 🔥</h2>
       <div className="container">
-        <SaucesList sauces={sauces}/>
+      <SaucesList sauces={sauces}/>
       </div>
       </div>
       <div className="item-section">
-      <h1>Items Store</h1>
-      <h2>Available items</h2>
-      <div className="container">
-        <ItemsList items={items}/>
-      </div>
+        <h1>Items Store</h1>
+        <h2>Available items</h2>
+        <div className="container">
+          <ItemsList items={items} />
+        </div>
       </div>
     </main>
   );

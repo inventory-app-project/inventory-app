@@ -51,3 +51,77 @@ Your team should strive to finish at least the first 4 tiers (a CRUD application
 - As a User, I want to add items to a cart and purchase
 - As a User, I want to use the application on a mobile browser
 - As an Admin, I want all Add and Edit item requests to have server-side validations
+
+## Front-End
+
+### Home Page (Tier I: MVP Application)
+
+- [ ] Header
+- [ ] Navigation links (Home, Add Item, Search, Cart)
+- [ ] Main Content Area
+- [x] List of Items
+- [ ] Each Item Card shows:
+- [x] Image
+- [x] Name
+- [ ] Description
+- [ ] Price
+- [ ] Category
+- [ ] Clicking on an item card navigates to Individual Item View.
+
+### Individual Item View (Tier I)
+
+- [ ] Header (same as Home Page)
+- [ ] Item Detail Section
+- [ ] Large Image of Item
+- [ ] Name
+- [ ] Full Description
+- [ ] Price
+- [ ] Category
+- [ ] Actions
+- [ ] Edit Button (navigates to Edit Item Form)
+- [ ] Delete Button
+
+### Add Item Form (Tier II)
+
+- [ ] Form Fields
+- [ ] Name (text input)
+- [ ] Description (textarea)
+- [ ] Price (number input)
+- [ ] Category (dropdown selection)
+- [ ] Image (file upload)
+- [ ] Submit Button
+- [ ] To add the item
+
+### Edit Item Form (Tier IV)
+- [ ] Form Fields (pre-filled with existing item data)
+- [ ] Name (text input)
+- [ ] Description (textarea)
+- [ ] Price (number input)
+- [ ] Category (dropdown selection)
+- [ ] Image (file upload)
+- [ ] Save Changes Button
+
+### Additional Features (Tier V)
+- [ ] Search Bar (on Home Page)
+- [ ] Allows filtering items by name, category, etc.
+- [ ] Shopping Cart
+- [ ] Icon on Header
+- [ ] Clicking opens a dropdown/popup showing added items and checkout option.
+- [ ] Responsive Design
+- [ ] Ensure the layout adjusts for mobile browsers.
+- [ ] Backend Routes Integration (All Tiers)
+
+## Back-End
+
+### Tier I
+- [x] Route to GET all items (for Home Page)
+- [x] Route to GET one item (for Individual Item View)
+
+### Tier II
+- [ ] Route to POST a new item (for Add Item Form)
+
+### Tier III
+- [ ] Route to DELETE an item (from Individual Item View)
+
+### Tier IV
+- [ ] Route to PUT (update) an item (from Edit Item Form)
