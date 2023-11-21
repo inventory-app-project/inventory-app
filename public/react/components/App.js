@@ -31,13 +31,32 @@ export const App = () => {
   }
 
   useEffect(() => {
-    //fetchSauces();
+    fetchSauces();
     fetchItems();
   }, []);
+
+  function App() {
+    return (
+      <div>
+        {/* any other components we add in future */}
+        <AddItemForm />
+      </div>
+    );
+  }
 
   return (
     <main>
       <div className="sauce-section">
+ damien-newnham
+        <h1>Sauce Store</h1>
+        <h2>All things 🔥</h2>
+        <SaucesList sauces={sauces} />
+      </div>
+      <div className="item-section">
+        <h1>Items Store</h1>
+        <h2>Available items</h2>
+        <ItemsList items={items} />
+
       <h1>Sauce Store</h1>
       <h2>All things 🔥</h2>
       <div className="container">
@@ -47,11 +66,8 @@ export const App = () => {
       <div className="item-section">
       <h1>Items Store</h1>
       <h2>Available items</h2>
-      <div className="container">
-        <ItemsList items={items}/>
+
       </div>
-      </div>
-      
     </main>
   );
 };
