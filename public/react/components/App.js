@@ -41,7 +41,7 @@ export const App = () => {
       <h1>Sauce Store</h1>
       <h2>All things 🔥</h2>
       <div className="container">
-      <SaucesList sauces={sauces}/>
+        <SaucesList sauces={sauces}/>
       </div>
       </div>
       <div className="item-section">
@@ -51,7 +51,6 @@ export const App = () => {
         <ItemsList items={items}/>
       </div>
       </div>
-      
     </main>
   );
 };
