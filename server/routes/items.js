@@ -12,4 +12,20 @@ router.get("/items", async (req, res, next) => {
   }
 });
 
+//Get a specific item by ID
+router.get("/items/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const item = await Item.findByPk(id);
+
+    if (item) {
+      res.json(item);
+    } else {
+      res.status(404).send("Item not found");
+    }
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
 module.exports = router;
