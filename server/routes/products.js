@@ -5,8 +5,8 @@ const {
     Items
 } = require('../models')
 
-router.get('/', async (req, res) => {
-    const items = (await Items.findAll()) // node ./server/routes/products.js
+router.get('/', async (req, res) => { // Fetch all
+    const items = (await Items.findAll())
     let ret = {
         "items": [],
         "sauces": []
@@ -19,8 +19,36 @@ router.get('/', async (req, res) => {
     for (let sauce of sauces) {
         ret.sauces.push(sauce.dataValues);
     }
-    
+
     res.status(200).json(ret)
+})
+
+router.get('/:id', async (req, res) => {
+    const id = Number(req.params.id);
+    const items = (await Items.findAll())
+    let ret = {
+        "items": [],
+        "sauces": []
+    };
+    for (let item of items) {
+        ret.items.push(item.dataValues);
+    }
+
+    const sauces = (await Sauce.findAll())
+    for (let sauce of sauces) {
+        ret.sauces.push(sauce.dataValues);
+    }
+
+    let selectedItem = ret.items.find(e => e.id === id);
+
+    if (!selectedItem) {
+        res.status(404).send({
+            "Status Code": 404,
+            "Error": `An item with the ID of ${id} does not exist in the current DB!`
+        })
+    } else {
+        res.status(200).json(selectedItem);
+    }
 })
 
 module.exports = router
