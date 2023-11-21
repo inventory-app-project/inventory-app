@@ -2,7 +2,7 @@ const { sauces, items } = require("./seedData.js");
 
 const { sequelize } = require("./db");
 const { Sauce } = require("./models");
-const { Items } = require("./models/Items");
+const { Items } = require("./models/items.js");
 
 const seed = async () => {
   try {
