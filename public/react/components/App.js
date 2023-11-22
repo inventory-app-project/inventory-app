@@ -1,35 +1,53 @@
 import React, { useState, useEffect } from "react";
 import { SaucesList } from "./SaucesList";
 import { ItemsList } from "./ItemsList";
-
-// import and prepend the api url to any fetch calls
+import AddItemForm from "./AddItemForm";
 import apiURL from "../api";
 
 export const App = () => {
   const [sauces, setSauces] = useState([]);
   const [items, setItems] = useState([]);
 
+  const deleteItem = async (itemId) => {
+    try {
+      const response = await fetch(`${apiURL}/items/${itemId}`, {
+        method: "DELETE",
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      // Update items state to remove the deleted item
+      setItems(items.filter((item) => item.id !== itemId));
+    } catch (error) {
+      console.error("Error deleting item:", error);
+    }
+  };
+
+  // Function to fetch sauces data
   async function fetchSauces() {
     try {
       const response = await fetch(`${apiURL}/sauces`);
       const saucesData = await response.json();
       setSauces(saucesData);
     } catch (err) {
-      console.log("Oh no an error! ", err);
+      console.error("Error fetching sauces: ", err);
     }
   }
 
+  // Function to fetch items data
   async function fetchItems() {
     try {
       const response = await fetch(`${apiURL}/items`);
       const itemsData = await response.json();
       setItems(itemsData);
     } catch (err) {
-      console.error("Oh no an error! ", err);
-      throw err;
+      console.error("Error fetching items: ", err);
     }
   }
 
+  // UseEffect hook to fetch data on component mount
   useEffect(() => {
     fetchSauces();
     fetchItems();
@@ -44,20 +62,10 @@ export const App = () => {
       </div>
     );
   }
-
+  
   return (
     <main>
       <div className="sauce-section">
-        damien-newnham
-        <h1>Sauce Store</h1>
-        <h2>All things 🔥</h2>
-        <SaucesList sauces={sauces} />
-      </div>
-      <div className="item-section">
-        <h1>Items Store</h1>
-        <h2>Available items</h2>
-        <ItemsList items={items} />
-
         <h1>Sauce Store</h1>
         <h2>All things 🔥</h2>
         <div className="container">
@@ -67,6 +75,12 @@ export const App = () => {
       <div className="item-section">
         <h1>Items Store</h1>
         <h2>Available items</h2>
+        <ItemsList items={items} />
+          {items.map((item) => (
+            <Item key={item.id} item={item} onDelete={deleteItem} />
+          ))}
+        </div>
+        <AddItemForm /> {/* Adding new items */}
       </div>
     </main>
   );

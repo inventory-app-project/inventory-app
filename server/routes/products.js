@@ -60,6 +60,19 @@ router.put("/items/:id", async (req, res) => {
       where: { id: req.params.id },
     });
     res.status(202).json(updatedItem);
+    
+// DELETE an item by ID
+router.delete("/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const item = await Item.findByPk(id);
+
+    if (item) {
+      await item.destroy();
+      res.status(200).send("Item successfully deleted");
+    } else {
+      res.status(404).send("Item not found");
+    }
   } catch (error) {
     res.status(500).send(error.message);
   }
