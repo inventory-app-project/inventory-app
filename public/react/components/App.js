@@ -53,6 +53,16 @@ export const App = () => {
     fetchItems();
   }, []);
 
+  function App() {
+    return (
+      <div>
+        {/* any other components we add in future */}
+        <AddItemForm />
+        <EditItemForm />
+      </div>
+    );
+  }
+  
   return (
     <main>
       <div className="sauce-section">
@@ -65,13 +75,12 @@ export const App = () => {
       <div className="item-section">
         <h1>Items Store</h1>
         <h2>Available items</h2>
-        <div className="container">
+        <ItemsList items={items} />
           {items.map((item) => (
             <Item key={item.id} item={item} onDelete={deleteItem} />
           ))}
         </div>
         <AddItemForm /> {/* Adding new items */}
-      </div>
     </main>
   );
 };
