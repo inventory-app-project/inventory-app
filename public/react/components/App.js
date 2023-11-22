@@ -48,6 +48,7 @@ export const App = () => {
   return (
     <main>
       <div className="sauce-section">
+        damien-newnham
         <h1>Sauce Store</h1>
         <h2>All things 🔥</h2>
         <SaucesList sauces={sauces} />
@@ -56,6 +57,16 @@ export const App = () => {
         <h1>Items Store</h1>
         <h2>Available items</h2>
         <ItemsList items={items} />
+
+        <h1>Sauce Store</h1>
+        <h2>All things 🔥</h2>
+        <div className="container">
+          <SaucesList sauces={sauces} />
+        </div>
+      </div>
+      <div className="item-section">
+        <h1>Items Store</h1>
+        <h2>Available items</h2>
       </div>
     </main>
   );
