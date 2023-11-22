@@ -58,7 +58,9 @@ export const App = () => {
       <div className="sauce-section">
         <h1>Sauce Store</h1>
         <h2>All things 🔥</h2>
-        <SaucesList sauces={sauces} />
+        <div className="container">
+          <SaucesList sauces={sauces} />
+        </div>
       </div>
       <div className="item-section">
         <h1>Items Store</h1>
