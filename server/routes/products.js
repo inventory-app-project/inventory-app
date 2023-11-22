@@ -60,7 +60,11 @@ router.put("/items/:id", async (req, res) => {
       where: { id: req.params.id },
     });
     res.status(202).json(updatedItem);
-    
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
 // DELETE an item by ID
 router.delete("/:id", async (req, res) => {
   try {

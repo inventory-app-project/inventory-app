@@ -81,7 +81,6 @@ export const App = () => {
           ))}
         </div>
         <AddItemForm /> {/* Adding new items */}
-      </div>
     </main>
   );
 };
