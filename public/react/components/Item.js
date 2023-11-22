@@ -26,6 +26,7 @@ export const Item = ({ item, onDelete }) => {
         <h3>£{item.price}</h3>
         {/* Add a delete button */}
         <button onClick={handleDelete}>Delete Item</button>
+        <button>Purchase</button>
       </div>
     </>
   );
