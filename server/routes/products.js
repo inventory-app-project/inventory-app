@@ -47,13 +47,20 @@ router.get("/sauces", async (req, res, next) => {
 // POST a new item
 router.post("/items", async (req, res) => {
   try {
-    const newItem = await Item.create(req.body);
+    const newItem = await Items.create(req.body);
     res.status(201).json(newItem);
   } catch (error) {
     res.status(500).send(error.message);
   }
 });
 
+router.put("/items/:id", async (req, res) => {
+  try {
+    const updatedItem = await Items.update(req.body, {
+      where: { id: req.params.id },
+    });
+    res.status(202).json(updatedItem);
+    
 // DELETE an item by ID
 router.delete("/:id", async (req, res) => {
   try {
