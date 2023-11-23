@@ -49,7 +49,7 @@ export const App = () => {
 
   // UseEffect hook to fetch data on component mount
   useEffect(() => {
-    fetchSauces();
+    //fetchSauces();
     fetchItems();
   }, []);
 
