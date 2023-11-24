@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./styles.css";
 
 function EditItemForm() {
   const [formData, setFormData] = useState({
@@ -28,6 +29,7 @@ function EditItemForm() {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
+      // Reset form or handle success
       setFormData({
         name: "",
         description: "",
@@ -36,52 +38,71 @@ function EditItemForm() {
         image: "",
       });
     } catch (error) {
-      console.error("Error adding item:", error);
+      console.error("Error updating item:", error);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="name"
-        value={formData.name}
-        onChange={handleChange}
-        placeholder="Name"
-        required
-      />
-      <textarea
-        name="description"
-        value={formData.description}
-        onChange={handleChange}
-        placeholder="Description"
-        required
-      />
-      <input
-        type="number"
-        name="price"
-        value={formData.price}
-        onChange={handleChange}
-        placeholder="Price"
-        required
-      />
-      <input
-        type="text"
-        name="category"
-        value={formData.category}
-        onChange={handleChange}
-        placeholder="Category"
-        required
-      />
-      <input
-        type="text"
-        name="image"
-        value={formData.image}
-        onChange={handleChange}
-        placeholder="Image URL"
-      />
-      <button type="submit">Edit Item</button>
-    </form>
+    <div className="form-container">
+      <form onSubmit={handleSubmit}>
+        <label className="label">Name</label>
+        <input
+          className="input-field"
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          placeholder="Name"
+          required
+        />
+
+        <label className="label">Description</label>
+        <textarea
+          className="text-area"
+          name="description"
+          value={formData.description}
+          onChange={handleChange}
+          placeholder="Description"
+          required
+        />
+
+        <label className="label">Price</label>
+        <input
+          className="input-field"
+          type="number"
+          name="price"
+          value={formData.price}
+          onChange={handleChange}
+          placeholder="Price"
+          required
+        />
+
+        <label className="label">Category</label>
+        <input
+          className="input-field"
+          type="text"
+          name="category"
+          value={formData.category}
+          onChange={handleChange}
+          placeholder="Category"
+          required
+        />
+
+        <label className="label">Image URL</label>
+        <input
+          className="input-field"
+          type="text"
+          name="image"
+          value={formData.image}
+          onChange={handleChange}
+          placeholder="Image URL"
+        />
+
+        <button className="button" type="submit">
+          Edit Item
+        </button>
+      </form>
+    </div>
   );
 }
 
