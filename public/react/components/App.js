@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { SaucesList } from "./SaucesList";
 import { ItemsList } from "./ItemsList";
+import { Item } from "./Item";
+
 import AddItemForm from "./AddItemForm";
-import apiURL from "../api";
 import EditItemForm from "./EditItemForm";
+
 import "./styles.css";
+
+import apiURL from "../api";
 
 export const App = () => {
   const [sauces, setSauces] = useState([]);
@@ -51,7 +55,7 @@ export const App = () => {
 
   // UseEffect hook to fetch data on component mount
   useEffect(() => {
-    fetchSauces();
+    //fetchSauces();
     fetchItems();
   }, []);
 
@@ -69,9 +73,6 @@ export const App = () => {
           <h1>Items Store</h1>
           <h2>Available items</h2>
           <ItemsList items={items} />
-          {items.map((item) => (
-            <Item key={item.id} item={item} onDelete={deleteItem} />
-          ))}
         </div>
         <AddItemForm />
         <EditItemForm />

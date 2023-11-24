@@ -8,5 +8,4 @@ export const Sauce = (props) => {
         <img src={props.item.image} alt={props.item.name} />
     </div>
   </>
-} 
-	
+}
