@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { SaucesList } from "./SaucesList";
 import { ItemsList } from "./ItemsList";
-import AddItemForm from "./AddItemForm";
-import apiURL from "../api";
 import { Item } from "./Item";
+
+import AddItemForm from "./AddItemForm";
+import EditItemForm from "./EditItemForm";
+
+import "./styles.css";
+
+import apiURL from "../api";
 
 export const App = () => {
   const [sauces, setSauces] = useState([]);
@@ -56,34 +61,22 @@ export const App = () => {
 
   function App() {
     return (
-      <div>
-        {/* any other components we add in future */}
+      <main>
+        <div className="sauce-section">
+          <h1>Sauce Store</h1>
+          <h2>All things 🔥</h2>
+          <div className="container">
+            <SaucesList sauces={sauces} />
+          </div>
+        </div>
+        <div className="item-section">
+          <h1>Items Store</h1>
+          <h2>Available items</h2>
+          <ItemsList items={items} />
+        </div>
         <AddItemForm />
         <EditItemForm />
-      </div>
+      </main>
     );
   }
-
-  return (
-    <main>
-      <div className="sauce-section">
-        <h1>Sauce Store</h1>
-        <h2>All things 🔥</h2>
-        <div className="container">
-          <SaucesList sauces={sauces} />
-        </div>
-      </div>
-      <div className="item-section">
-        <h1>Items Store</h1>
-        <h2>Available items</h2>
-        <div className="container">
-        <ItemsList items={items} />
-          {items.map((item) => (
-            <Item key={item.id} item={item} onDelete={deleteItem} />
-          ))}
-        </div>
-      </div>
-        <AddItemForm /> {/* Adding new items */}
-    </main>
-  );
 };

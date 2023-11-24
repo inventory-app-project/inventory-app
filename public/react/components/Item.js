@@ -12,25 +12,19 @@ export const Item = ({ item, onDelete }) => {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
-      onDelete(item.id); // Callback to handle UI changes after deletion
+      onDelete(item.id);
     } catch (error) {
       console.error("Error deleting item:", error);
     }
   };
 
   return (
-    <>
-      <div>
-        <img src={item.image} alt={item.name} />
-        <label>{item.name}</label>
-        <h3>£{item.price}</h3>
-        {/* Add a delete button */}
-        <button onClick={handleDelete}>Delete Item</button>
-        <img src={item.image} alt={item.name} />
-        <label>{item.name}</label>
-        <h3>£{item.price}</h3>
-        <button>Purchase</button>
-      </div>
-    </>
+    <div>
+      <img src={item.image} alt={item.name} />
+      <label>{item.name}</label>
+      <h3>£{item.price}</h3>
+      <button onClick={handleDelete}>Delete Item</button>
+      <button>Purchase</button>
+    </div>
   );
 };
