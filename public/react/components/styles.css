@@ -26,11 +26,31 @@ body {
 .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
+  justify-content: space-around; /* Adjust to space items evenly */
+  padding: 10px;
 }
 
-.item,
+.item {
+  background-color: var(--color-pink);
+  color: var(--color-dark);
+  margin: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 200px; /* Set a max width for each item box */
+  flex: 1 1 auto; /* Flex properties to allow boxes to be flexible in size */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
 .form-container {
   background-color: var(--color-pink);
   color: var(--color-dark);
