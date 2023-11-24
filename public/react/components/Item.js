@@ -21,7 +21,6 @@ export const Item = ({ item, onDelete }) => {
   return (
     <>
       <div>
-        <img src={item.image} alt={item.name} />
         <label>{item.name}</label>
         <h3>£{item.price}</h3>
         {/* Add a delete button */}

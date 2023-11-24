@@ -10,7 +10,7 @@ function AddItemForm() {
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [target.name]: target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
