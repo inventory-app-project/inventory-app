@@ -56,23 +56,22 @@ Your team should strive to finish at least the first 4 tiers (a CRUD application
 
 ### Home Page (Tier I: MVP Application)
 
-- [ ] Header
+- [x] Header
 - [ ] Navigation links (Home, Add Item, Search, Cart)
-- [ ] Main Content Area
+- [x] Main Content Area
 - [x] List of Items
-- [ ] Each Item Card shows:
+- [x] Each Item Card shows:
 - [x] Image
 - [x] Name
-- [ ] Description
-- [ ] Price
-- [ ] Category
-- [ ] Clicking on an item card navigates to Individual Item View.
+- [x] Description
+- [x] Price
+- [x] Category
 
 ### Individual Item View (Tier I)
 
-- [ ] Header (same as Home Page)
-- [ ] Item Detail Section
-- [ ] Large Image of Item
+- [x] Header (same as Home Page)
+- [x] Item Detail Section
+- [x] Large Image of Item
 - [ ] Name
 - [ ] Full Description
 - [ ] Price
@@ -118,7 +117,7 @@ Your team should strive to finish at least the first 4 tiers (a CRUD application
 - [x] Route to GET one item (for Individual Item View)
 
 ### Tier II
-- [ ] Route to POST a new item (for Add Item Form)
+- [x] Route to POST a new item (for Add Item Form)
 
 ### Tier III
 - [ ] Route to DELETE an item (from Individual Item View)
