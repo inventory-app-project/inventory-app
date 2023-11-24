@@ -120,7 +120,7 @@ Your team should strive to finish at least the first 4 tiers (a CRUD application
 - [x] Route to POST a new item (for Add Item Form)
 
 ### Tier III
-- [ ] Route to DELETE an item (from Individual Item View)
+- [x] Route to DELETE an item (from Individual Item View)
 
 ### Tier IV
-- [ ] Route to PUT (update) an item (from Edit Item Form)
+- [x] Route to PUT (update) an item (from Edit Item Form)
