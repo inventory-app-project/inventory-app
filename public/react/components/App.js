@@ -3,6 +3,7 @@ import { SaucesList } from "./SaucesList";
 import { ItemsList } from "./ItemsList";
 import AddItemForm from "./AddItemForm";
 import apiURL from "../api";
+import { Item } from "./Item";
 
 export const App = () => {
   const [sauces, setSauces] = useState([]);
@@ -62,7 +63,7 @@ export const App = () => {
       </div>
     );
   }
-  
+
   return (
     <main>
       <div className="sauce-section">
