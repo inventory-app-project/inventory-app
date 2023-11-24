@@ -26,9 +26,9 @@ export const Item = ({ item, onDelete }) => {
         <h3>£{item.price}</h3>
         {/* Add a delete button */}
         <button onClick={handleDelete}>Delete Item</button>
-        <img src={props.item.image} alt={props.item.name} />
-        <label>{props.item.name}</label>
-        <h3>£{props.item.price}</h3>
+        <img src={item.image} alt={item.name} />
+        <label>{item.name}</label>
+        <h3>£{item.price}</h3>
         <button>Purchase</button>
       </div>
     </>
