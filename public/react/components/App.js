@@ -59,24 +59,22 @@ export const App = () => {
     fetchItems();
   }, []);
 
-  function App() {
-    return (
-      <main>
-        <div className="sauce-section">
-          <h1>Sauce Store</h1>
-          <h2>All things 🔥</h2>
-          <div className="container">
-            <SaucesList sauces={sauces} />
-          </div>
+  return (
+    <main>
+      <div className="sauce-section">
+        <h1>Sauce Store</h1>
+        <h2>All things 🔥</h2>
+        <div className="container">
+          <SaucesList sauces={sauces} />
         </div>
-        <div className="item-section">
-          <h1>Items Store</h1>
-          <h2>Available items</h2>
-          <ItemsList items={items} />
-        </div>
-        <AddItemForm />
-        <EditItemForm />
-      </main>
-    );
-  }
+      </div>
+      <div className="item-section">
+        <h1>Items Store</h1>
+        <h2>Available items</h2>
+        <ItemsList items={items} />
+      </div>
+      <AddItemForm />
+      <EditItemForm />
+    </main>
+  );
 };
