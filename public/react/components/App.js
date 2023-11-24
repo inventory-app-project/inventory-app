@@ -75,11 +75,13 @@ export const App = () => {
       <div className="item-section">
         <h1>Items Store</h1>
         <h2>Available items</h2>
+        <div className="container">
         <ItemsList items={items} />
           {items.map((item) => (
             <Item key={item.id} item={item} onDelete={deleteItem} />
           ))}
         </div>
+      </div>
         <AddItemForm /> {/* Adding new items */}
     </main>
   );
