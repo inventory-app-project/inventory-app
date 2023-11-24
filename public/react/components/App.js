@@ -3,6 +3,8 @@ import { SaucesList } from "./SaucesList";
 import { ItemsList } from "./ItemsList";
 import AddItemForm from "./AddItemForm";
 import apiURL from "../api";
+import EditItemForm from "./EditItemForm";
+import "./styles.css";
 
 export const App = () => {
   const [sauces, setSauces] = useState([]);
@@ -55,32 +57,25 @@ export const App = () => {
 
   function App() {
     return (
-      <div>
-        {/* any other components we add in future */}
-        <AddItemForm />
-        <EditItemForm />
-      </div>
-    );
-  }
-  
-  return (
-    <main>
-      <div className="sauce-section">
-        <h1>Sauce Store</h1>
-        <h2>All things 🔥</h2>
-        <div className="container">
-          <SaucesList sauces={sauces} />
+      <main>
+        <div className="sauce-section">
+          <h1>Sauce Store</h1>
+          <h2>All things 🔥</h2>
+          <div className="container">
+            <SaucesList sauces={sauces} />
+          </div>
         </div>
-      </div>
-      <div className="item-section">
-        <h1>Items Store</h1>
-        <h2>Available items</h2>
-        <ItemsList items={items} />
+        <div className="item-section">
+          <h1>Items Store</h1>
+          <h2>Available items</h2>
+          <ItemsList items={items} />
           {items.map((item) => (
             <Item key={item.id} item={item} onDelete={deleteItem} />
           ))}
         </div>
-        <AddItemForm /> {/* Adding new items */}
-    </main>
-  );
+        <AddItemForm />
+        <EditItemForm />
+      </main>
+    );
+  }
 };
