@@ -19,7 +19,7 @@ export const Item = ({ item, onDelete }) => {
   };
 
   return (
-    <div>
+    <div className="item">
       <img src={item.image} alt={item.name} />
       <label>{item.name}</label>
       <h3>£{item.price}</h3>
